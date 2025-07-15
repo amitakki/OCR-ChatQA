@@ -44,7 +44,7 @@ ocr-rag-chatbot/
 1. **Python 3.8+**
 2. **Tesseract OCR Engine**
 3. **Poppler Utils** (for PDF processing)
-4. **API Keys** (Groq API key required)
+4. **API Keys** ([Groq](https://groq.com/) API key required)
 
 ### System Dependencies
 
