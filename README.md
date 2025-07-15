@@ -34,9 +34,7 @@ ocr-rag-chatbot/
 ├── processed_documents/         # OCR output directory (auto-created)
 ├── chroma_db/                  # Vector database directory (auto-created)
 ├── .env.example                # Environment variables template
-├── packages.txt                # System packages for deployment
 ├── README.md                   # This file
-└── setup.py                    # Package setup (optional)
 ```
 
 ## 🚀 Quick Start
