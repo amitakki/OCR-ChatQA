@@ -149,8 +149,8 @@ graph TB
 
 ### **1. Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/ocr-enhanced-rag-chatbot.git
-cd ocr-enhanced-rag-chatbot
+git clone https://github.com/yourusername/ocr-rag-chatbot.git
+cd ocr-rag-chatbot
 ```
 
 ### **2. Create Virtual Environment**
@@ -167,7 +167,10 @@ source rag_env/bin/activate
 
 ### **3. Install Dependencies**
 ```bash
+# Install backend dependencies
+cd api/
 pip install -r requirements.txt
+cd ..
 ```
 
 ### **4. Install System Dependencies**
@@ -195,7 +198,13 @@ sudo apt-get install poppler-utils
 ## ⚙️ Configuration
 
 ### **1. Environment Variables**
-Create a `.env` file in the project root:
+Create a `.env` file in the project root by copying from the template:
+
+```bash
+cp .env.example .env
+```
+
+Then edit the `.env` file with your configuration:
 
 ```env
 # Google AI Configuration
@@ -247,7 +256,7 @@ mkdir -p logs
 ### **1. Start the Backend Server**
 ```bash
 # Navigate to project directory
-cd ocr-enhanced-rag-chatbot
+cd ocr-rag-chatbot
 
 # Activate virtual environment
 source rag_env/bin/activate  # Linux/macOS
@@ -255,6 +264,7 @@ source rag_env/bin/activate  # Linux/macOS
 rag_env\Scripts\activate     # Windows
 
 # Start FastAPI server
+cd api/
 python main.py
 ```
 
@@ -263,6 +273,7 @@ python main.py
 ### **2. Launch Gradio Interface**
 ```bash
 # In a new terminal, with virtual environment activated
+cd ocr-rag-chatbot/app/
 python gradio_app.py
 ```
 
@@ -380,38 +391,45 @@ The application features a modern, responsive web interface built with Gradio:
 ## 📁 Project Structure
 
 ```
-ocr-enhanced-rag-chatbot/
-├── 📄 main.py                 # FastAPI application entry point
-├── 🎨 gradio_app.py          # Gradio web interface
-├── 🔧 requirements.txt       # Python dependencies
-├── 📝 README.md             # Project documentation
-├── 🔐 .env                  # Environment variables (create this)
+ocr-rag-chatbot/
+├── 📂 api/                          # Backend API components
+│   ├── 🔍 chroma_utils.py          # Vector store operations with OCR support
+│   ├── 🗄️ db_utils.py              # Database operations with OCR tracking
+│   ├── 🧠 langchain_utils.py       # LangChain RAG pipeline
+│   ├── 🚀 main.py                  # FastAPI application entry point
+│   ├── 🤖 ocr_utils.py             # OCR processing utilities (Mistral AI)
+│   ├── 📋 pydantic_models.py       # Data models and schemas
+│   └── 📦 requirements.txt         # Backend dependencies
 │
-├── 📂 api/
-│   ├── 🔗 api_utils.py      # API client utilities
-│   └── 📋 pydantic_models.py # Data models and validation
+├── 📂 app/                         # Frontend applications
+│   ├── 🔗 api_utils.py            # API communication utilities
+│   ├── 💬 chat_interface.py       # Chat interface components
+│   └── 🎨 gradio_app.py           # Gradio web interface (primary UI)
 │
-├── 📂 core/
-│   ├── 🗄️ db_utils.py       # Database operations
-│   ├── 🔍 chroma_utils.py   # Vector store management
-│   ├── 🤖 mistral_ocr_utils.py # OCR processing with Mistral AI
-│   └── 🧠 langchain_utils.py # LangChain integration
-│
-├── 📂 processed_documents/   # OCR output directory
-├── 📂 chroma_db/            # Vector database storage
-├── 📂 logs/                 # Application logs
-│
-└── 📄 app.log               # Runtime application log
+├── 📂 processed_documents/         # OCR output directory (auto-created)
+├── 📂 chroma_db/                  # Vector database directory (auto-created)
+├── 🔐 .env.example                # Environment variables template
+└── 📝 README.md                   # Project documentation
 ```
 
 ### **Core Components**
 
-- **`main.py`** - FastAPI server with all REST endpoints
-- **`gradio_app.py`** - Modern web interface with real-time updates
-- **`chroma_utils.py`** - Vector database operations and OCR integration
-- **`mistral_ocr_utils.py`** - Advanced OCR processing with Mistral AI
-- **`db_utils.py`** - SQLite database management for metadata
-- **`langchain_utils.py`** - RAG chain configuration and AI integration
+#### **🔧 Backend (`api/` directory)**
+- **`main.py`** - FastAPI server with REST endpoints and background processing
+- **`chroma_utils.py`** - Vector database operations with advanced OCR integration
+- **`ocr_utils.py`** - Mistral AI OCR processing with automatic PDF detection
+- **`db_utils.py`** - SQLite database management with OCR metadata tracking
+- **`langchain_utils.py`** - RAG pipeline configuration and AI model integration
+- **`pydantic_models.py`** - Data validation models and API schemas
+
+#### **🎨 Frontend (`app/` directory)**
+- **`gradio_app.py`** - Modern web interface with real-time updates and professional design
+- **`api_utils.py`** - HTTP client utilities for backend communication
+- **`chat_interface.py`** - Reusable chat components and conversation management
+
+#### **📁 Data Directories**
+- **`processed_documents/`** - OCR-processed files and extracted text storage
+- **`chroma_db/`** - Vector embeddings and semantic search index
 
 ---
 
@@ -625,9 +643,9 @@ Special thanks to all contributors who have helped improve this project through 
 **⭐ If you find this project helpful, please consider giving it a star! ⭐**
 
 **🔗 Connect with us:**
-[GitHub Issues](https://github.com/yourusername/ocr-enhanced-rag-chatbot/issues) • 
-[Documentation](https://github.com/yourusername/ocr-enhanced-rag-chatbot/wiki) • 
-[Discussions](https://github.com/yourusername/ocr-enhanced-rag-chatbot/discussions)
+[GitHub Issues](https://github.com/yourusername/ocr-rag-chatbot/issues) • 
+[Documentation](https://github.com/yourusername/ocr-rag-chatbot/wiki) • 
+[Discussions](https://github.com/yourusername/ocr-rag-chatbot/discussions)
 
 ---
 
