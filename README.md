@@ -172,27 +172,6 @@ cd api/
 pip install -r requirements.txt
 cd ..
 ```
-
-### **4. Install System Dependencies**
-
-#### **Windows**
-```bash
-# Install poppler for pdf2image
-# Download from: https://blog.alivate.com.au/poppler-windows/
-# Add to PATH environment variable
-```
-
-#### **macOS**
-```bash
-brew install poppler
-```
-
-#### **Linux (Ubuntu/Debian)**
-```bash
-sudo apt-get update
-sudo apt-get install poppler-utils
-```
-
 ---
 
 ## ⚙️ Configuration
@@ -212,19 +191,6 @@ GOOGLE_API_KEY=your_google_api_key_here
 
 # Mistral AI Configuration  
 MISTRAL_API_KEY=your_mistral_api_key_here
-
-# Database Configuration (Optional)
-DATABASE_URL=sqlite:///./rag_app.db
-
-# Server Configuration (Optional)
-HOST=127.0.0.1
-PORT=8000
-DEBUG=true
-
-# OCR Configuration (Optional)
-OCR_OUTPUT_DIR=./processed_documents
-MAX_FILE_SIZE_MB=50
-SUPPORTED_FORMATS=.pdf,.docx,.html
 ```
 
 ### **2. API Key Setup**
