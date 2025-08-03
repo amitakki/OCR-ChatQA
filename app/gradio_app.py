@@ -18,7 +18,7 @@ class GradioAPIClient:
         self.session_id = None
 
     def chat(
-        self, message: str, model: str = "llama-3.3-70b-versatile"
+        self, message: str, model: str = "gemini-2.5-flash"
     ) -> Tuple[str, float]:
         """Send chat message and get response"""
         try:
@@ -332,11 +332,10 @@ def create_interface():
                     with gr.Column(scale=1):
                         model_choice = gr.Dropdown(
                             choices=[
-                                "llama-3.3-70b-versatile",
-                                "gpt-4o",
-                                "gpt-4o-mini",
+                                "gemini-2.5-pro",
+                                "gemini-2.5-flash"
                             ],
-                            value="llama-3.3-70b-versatile",
+                            value="gemini-2.5-flash",
                             label="🤖 Select Model",
                             info="Choose the AI model for responses",
                         )

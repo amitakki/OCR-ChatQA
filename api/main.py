@@ -6,6 +6,8 @@ from pydantic_models import (
     DeleteFileRequest,
     ProcessingStatsResponse,
 )
+from dotenv import load_dotenv
+load_dotenv()
 from langchain_utils import get_rag_chain
 from db_utils import (
     insert_application_logs,
@@ -24,13 +26,11 @@ from chroma_utils import (
 import os
 import uuid
 import logging
-from dotenv import load_dotenv
 import shutil
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
 import time
 
-load_dotenv()
 logging.basicConfig(filename="app.log", level=logging.INFO)
 logger = logging.getLogger(__name__)
 

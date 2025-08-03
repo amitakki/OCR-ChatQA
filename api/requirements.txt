@@ -1,8 +1,9 @@
 langchain
-langchain-groq
 langchain-core
 langchain_community
 langchain-huggingface
+langchain-google-genai
+mistralai
 docx2txt
 pypdf
 langchain_chroma
@@ -10,9 +11,9 @@ python-multipart
 python-dotenv
 streamlit
 fastapi
-sentence_transformers
+google-generativeai
 uvicorn
-pytesseract
+
 opencv-python
 pdf2image
 PyMuPDF
@@ -22,5 +23,4 @@ requests
 
 # Gradio UI Requirements
 gradio>=4.0.0
-requests
 typing-extensions

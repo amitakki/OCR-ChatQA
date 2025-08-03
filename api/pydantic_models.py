@@ -5,9 +5,8 @@ from typing import List, Optional
 
 
 class ModelName(str, Enum):
-    GPT4_O = "gpt-4o"
-    GPT4_O_MINI = "gpt-4o-mini"
-    LLAMA_3_3_70B = "llama-3.3-70b-versatile"
+    GEMINI_2_5_PRO = "gemini-2.5-pro"
+    GEMENI_2_5_FLASH = "gemini-2.5-flash"
 
 
 class ProcessingStatus(str, Enum):
@@ -20,7 +19,7 @@ class ProcessingStatus(str, Enum):
 class QueryInput(BaseModel):
     question: str
     session_id: str = Field(default=None)
-    model: ModelName = Field(default=ModelName.LLAMA_3_3_70B)
+    model: ModelName = Field(default=ModelName.GEMENI_2_5_FLASH)
 
 
 class QueryResponse(BaseModel):

@@ -210,4 +210,5 @@ __marimo__/
 LangChain_Conversational_RAG_Crash_Course_From_Basics_to_Production_Part_1.ipynb
 chroma_db/
 docs/
+processed_documents/
 rag_app.db
